@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
-import exercises from './assets/data/exercises.json';
-import ExerciseCard from './components/ExerciseCard';
-import Navbar from './components/Navbar';
+import exercises from './../../assets/data/exercises.json';
+import ExerciseCard from '../../components/ExerciseCard';
+import Navbar from '../../components/Navbar';
 
 const exercise = exercises[0];
 
@@ -17,7 +17,7 @@ export default function App() {
       <FlatList
         data={exercises}
         renderItem={({ item, index }) => <ExerciseCard key={index} exercise={item} />}
-        contentContainerStyle={{ gap:1 }}
+        contentContainerStyle={{ gap:10 }}
         keyExtractor={(item) => item.name}
       />
       {/* {exercises.map((exercise, index) => (
@@ -32,6 +32,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'gainsboro',
+    backgroundColor: 'ghostwhite',
   }
 });
