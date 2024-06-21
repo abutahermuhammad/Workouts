@@ -12,17 +12,15 @@ export default function App() {
     <View style={styles.container}>
       {/* <StatusBar style="auto" /> */}
 
-      <Navbar />
+      {/* <Navbar /> */}
 
       <FlatList
+        style={styles.list}
         data={exercises}
         renderItem={({ item, index }) => <ExerciseCard key={index} exercise={item} />}
         contentContainerStyle={{ gap:10 }}
         keyExtractor={(item) => item.name}
       />
-      {/* {exercises.map((exercise, index) => (
-        <ExerciseCard key={index} exercise={exercise} />
-      ))} */}
     </View>
   );
 }
@@ -33,5 +31,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'ghostwhite',
+  },
+  list: {
+    paddingVertical: 10,
   }
 });

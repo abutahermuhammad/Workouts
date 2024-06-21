@@ -1,11 +1,15 @@
-import { StyleSheet, Text, View } from "react-native"
+import { Link } from "expo-router"
+import { Pressable, StyleSheet, Text, View } from "react-native"
 
 export default function ExerciseCard({exercise}) {
     return (
-        <View style={styles.card} >
-            <Text style={styles.cardTitle}>{exercise.name}</Text>
-            <Text style={styles.cardMeta}>{exercise?.muscle?.toUpperCase()} | {exercise.equipment} | {exercise.difficulty}</Text>
-        </View>
+        // <Link href={`/exercise/${String(exercise.name).split(' ').join('-')}`} asChild>
+        <Link href={`/${exercise.name}`} asChild>
+            <Pressable style={styles.card} >
+                <Text style={styles.cardTitle}>{exercise.name}</Text>
+                <Text style={styles.cardMeta}>{exercise?.muscle?.toUpperCase()} | {exercise.equipment} | {exercise.difficulty}</Text>
+            </Pressable>
+        </Link>
     )
 }
 
